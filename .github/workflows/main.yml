@@ -1,4 +1,12 @@
-- uses: xu-cheng/latex-action@v3
-  with:
-    root_file: book.tex
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
+        with:
+          root_file: book.tex
     # The working directory for this action
